@@ -7,6 +7,7 @@ services:
             dockerfile: alpine.dockerfile
         ports:
             - 80:80
+            - 21:21
         container_name: alpine
         networks:
             kali-app-network:

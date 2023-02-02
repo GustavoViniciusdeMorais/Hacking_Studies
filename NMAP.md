@@ -1,5 +1,8 @@
 # NMAP
 
+Network foundations:
+- tcp ip protocol
+
 ```
 
 nmap -sS -O -p80,8080 10.0.0.3 // check if ports are opened
@@ -23,5 +26,13 @@ nmap -sV 10.0.0.3 // show services running at host
 nmap -O 10.0.0.3 // show host OS
 
 nmap -A 10.0.0.3 -oN export // creates the export file with the command result
+
+cd /usr/share/nmap/scripts
+
+nmap --script-help [script_name]
+
+nmap --script [script_name] [host ip] //  nmap --script port-states 10.0.0.3
+
+docker run -d -p 21:21 alpine
 
 ```
