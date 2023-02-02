@@ -1,5 +1,4 @@
-FROM nginx:stable-alpine
-ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
+FROM alpine
 
 EXPOSE 80
 EXPOSE 21

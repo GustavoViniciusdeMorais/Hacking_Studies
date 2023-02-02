@@ -1,17 +1,16 @@
 version: '3'
 
 services:
-    nginx:
+    alpine:
         build:
             context: .
-            dockerfile: nginx.dockerfile
+            dockerfile: alpine.dockerfile
         ports:
             - 80:80
-        volumes:
-            - ./:/var/www/html
-        container_name: kalinginx
+        container_name: alpine
         networks:
-            - kali-app-network
+            kali-app-network:
+                ipv4_address: 10.0.0.3
 
     kali:
         build:
@@ -21,7 +20,8 @@ services:
             - ./:/var/www/html
         container_name: kali
         networks:
-            - kali-app-network
+            kali-app-network:
+                ipv4_address: 10.0.0.8
 
 networks:
     kali-app-network:
