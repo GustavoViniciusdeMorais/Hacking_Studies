@@ -6,20 +6,32 @@ services:
             context: .
             dockerfile: alpine.dockerfile
         ports:
-            - 80:80
-            - 21:21
+            - 81:81
         container_name: alpine
         networks:
             kali-app-network:
                 ipv4_address: 10.0.0.3
 
-    kali:
+    # kali:
+    #     build:
+    #         context: .
+    #         dockerfile: kali.dockerfile
+    #     volumes:
+    #         - ./:/var/www/html
+    #     container_name: kali
+    #     networks:
+    #         kali-app-network:
+    #             ipv4_address: 10.0.0.8
+
+    arch:
         build:
             context: .
-            dockerfile: kali.dockerfile
+            dockerfile: arch.dockerfile
+        container_name: arch
+        ports:
+            - 80:80
         volumes:
             - ./:/var/www/html
-        container_name: kali
         networks:
             kali-app-network:
                 ipv4_address: 10.0.0.8
