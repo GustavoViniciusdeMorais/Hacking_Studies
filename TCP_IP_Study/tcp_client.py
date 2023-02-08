@@ -1,7 +1,8 @@
 import socket
  
 # Create a connection to the server application on port 81
-tcp_socket = socket.create_connection(('localhost', 81))
+host = "10.0.0.8"
+tcp_socket = socket.create_connection((host, 81))
  
 try:
     data = str.encode("Hi. I am a TCP client sending data to the server")

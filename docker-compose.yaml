@@ -5,8 +5,10 @@ services:
         build:
             context: .
             dockerfile: alpine.dockerfile
+        volumes:
+            - ./:/var/www/html
         ports:
-            - 81:81
+            - 80:80
         container_name: alpine
         networks:
             kali-app-network:
@@ -29,7 +31,7 @@ services:
             dockerfile: arch.dockerfile
         container_name: arch
         ports:
-            - 80:80
+            - 81:81
         volumes:
             - ./:/var/www/html
         networks:
