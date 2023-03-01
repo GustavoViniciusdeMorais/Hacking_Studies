@@ -12,7 +12,7 @@ services:
         container_name: alpine
         networks:
             kali-app-network:
-                ipv4_address: 10.0.0.3
+                ipv4_address: 17.0.0.3
 
     # kali:
     #     build:
@@ -23,7 +23,7 @@ services:
     #     container_name: kali
     #     networks:
     #         kali-app-network:
-    #             ipv4_address: 10.0.0.8
+    #             ipv4_address: 17.0.0.8
 
     arch:
         build:
@@ -36,7 +36,7 @@ services:
             - ./:/var/www/html
         networks:
             kali-app-network:
-                ipv4_address: 10.0.0.8
+                ipv4_address: 17.0.0.8
 
 networks:
     kali-app-network:
@@ -44,4 +44,4 @@ networks:
         ipam:
             driver: default
             config:
-                - subnet: "10.0.0.0/16"
+                - subnet: "17.0.0.0/16"
