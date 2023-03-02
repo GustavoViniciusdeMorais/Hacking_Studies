@@ -1,5 +1,10 @@
 # TCP IP
 
+### Install Python
+```
+pacman -Sy python-pip --noconfirm
+```
+
 ### Commands
 ```
 docker exec -it arch bash
