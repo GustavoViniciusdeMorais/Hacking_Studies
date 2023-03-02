@@ -4,15 +4,15 @@ Gustavo Morais, at Arch Linux
 
 ### Install required for Arch Linux
 ```
-pacman -S gdb --noconfirm, this is the gdb memory debug
+pacman -Sy gdb --noconfirm, this is the gdb memory debug
 
-pacman -S pwndbg --noconfirm
+pacman -Sy pwndbg --noconfirm
 
 echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
 
-pacman -S gcc --noconfirm
+pacman -Sy gcc --noconfirm
 
-pacman -S nano --noconfirm
+pacman -Sy nano --noconfirm
 ```
 
 ### Compile C program with debug simbols
