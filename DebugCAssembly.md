@@ -17,7 +17,11 @@ pacman -Sy nano --noconfirm
 
 ### Compile C program with debug simbols
 ```
+
 gcc -g CPrograms/first.c
+
+gcc -g -o CPrograms/pointer.out CPrograms/pointer.c
+
 ```
 
 ### dump assembly code of C program
@@ -41,3 +45,4 @@ gdb -q CPrograms/a.out
 ```
 
 ![](./imgs/CAssembleDebug.png)
+![](./imgs/CmemoryPointerDebug.png)
