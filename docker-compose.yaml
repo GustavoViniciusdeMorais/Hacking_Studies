@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    alpine:
+    alpine_gustavo:
         build:
             context: .
             dockerfile: alpine.dockerfile
@@ -9,7 +9,7 @@ services:
             - ./:/var/www/html
         ports:
             - 80:80
-        container_name: alpine
+        container_name: alpine_gustavo
         networks:
             kali-app-network:
                 ipv4_address: 17.0.0.3
@@ -37,6 +37,19 @@ services:
         networks:
             kali-app-network:
                 ipv4_address: 17.0.0.8
+    
+    ubuntu:
+        build:
+            context: .
+            dockerfile: ubuntu.dockerfile
+        container_name: ubuntu
+        ports:
+            - 8800:8880
+        volumes:
+            - ./:/var/www/html
+        networks:
+            kali-app-network:
+                ipv4_address: 17.0.0.9
 
 networks:
     kali-app-network:
