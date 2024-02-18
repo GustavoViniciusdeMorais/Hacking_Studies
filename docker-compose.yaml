@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-    alpine_gustavo:
+    parrot:
         build:
             context: .
-            dockerfile: alpine.dockerfile
+            dockerfile: parrot.dockerfile
         volumes:
             - ./:/var/www/html
         ports:
             - 80:80
-        container_name: alpine_gustavo
+        container_name: parrot
         networks:
-            kali-app-network:
+            hack-app-network:
                 ipv4_address: 17.0.0.3
 
     # kali:
@@ -22,37 +22,37 @@ services:
     #         - ./:/var/www/html
     #     container_name: kali
     #     networks:
-    #         kali-app-network:
+    #         hack-app-network:
     #             ipv4_address: 17.0.0.8
 
-    arch:
-        build:
-            context: .
-            dockerfile: arch.dockerfile
-        container_name: arch
-        ports:
-            - 81:81
-        volumes:
-            - ./:/var/www/html
-        networks:
-            kali-app-network:
-                ipv4_address: 17.0.0.8
+    # arch:
+    #     build:
+    #         context: .
+    #         dockerfile: arch.dockerfile
+    #     container_name: arch
+    #     ports:
+    #         - 81:81
+    #     volumes:
+    #         - ./:/var/www/html
+    #     networks:
+    #         hack-app-network:
+    #             ipv4_address: 17.0.0.8
     
-    ubuntu:
-        build:
-            context: .
-            dockerfile: ubuntu.dockerfile
-        container_name: ubuntu
-        ports:
-            - 8800:8880
-        volumes:
-            - ./:/var/www/html
-        networks:
-            kali-app-network:
-                ipv4_address: 17.0.0.9
+    # ubuntu:
+    #     build:
+    #         context: .
+    #         dockerfile: ubuntu.dockerfile
+    #     container_name: ubuntu
+    #     ports:
+    #         - 8800:8880
+    #     volumes:
+    #         - ./:/var/www/html
+    #     networks:
+    #         hack-app-network:
+    #             ipv4_address: 17.0.0.9
 
 networks:
-    kali-app-network:
+    hack-app-network:
         driver: bridge
         ipam:
             driver: default
