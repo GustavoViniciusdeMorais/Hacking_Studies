@@ -10,9 +10,10 @@ services:
         ports:
             - 80:80
         container_name: parrot
-        networks:
-            hack-app-network:
-                ipv4_address: 17.0.0.3
+        network_mode: "host"
+        # networks:
+        #     hack-app-network:
+        #         ipv4_address: 17.0.0.3
 
     # kali:
     #     build:
@@ -51,10 +52,10 @@ services:
     #         hack-app-network:
     #             ipv4_address: 17.0.0.9
 
-networks:
-    hack-app-network:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: "17.0.0.0/16"
+# networks:
+#     hack-app-network:
+#         driver: bridge
+#         ipam:
+#             driver: default
+#             config:
+#                 - subnet: "17.0.0.0/16"
