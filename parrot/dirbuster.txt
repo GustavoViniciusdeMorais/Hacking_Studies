@@ -1,0 +1,4 @@
+admin.php
+wp-login
+admin
+login
