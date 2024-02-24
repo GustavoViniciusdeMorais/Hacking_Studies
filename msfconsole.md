@@ -24,6 +24,8 @@
   
 - **`show payloads`**: List available payloads for the selected exploit.
 
+- **`back`**: Comes back from selected exploit
+
 ## Exploitation
 
 - **`set`**: Set options for the selected module.
