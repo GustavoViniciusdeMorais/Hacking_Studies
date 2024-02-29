@@ -2,3 +2,4 @@ admin.php
 wp-login
 admin
 login
+login.php
