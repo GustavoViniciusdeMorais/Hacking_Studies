@@ -1,0 +1,4 @@
+admin
+login
+s3
+test
