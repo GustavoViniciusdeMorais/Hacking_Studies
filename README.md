@@ -1,17 +1,20 @@
-# My Hacking Kali Study
+# Hacking Studies
 
 Created by: Gustavo Vinicius
-
+- [Basic Hacking](./BasicHackingSteps.md)
 ### Installs
 ```
-
 apt update
 
 apt install nmap -y
 
+apt apt install iputils-ping -y
+
 apt install wget -y
 
-apt update
+apt-get install net-tools -y
+
+apt-get install tcpdump -y
 
 apt install gpgv2 autoconf bison build-essential postgresql libaprutil1 libgmp3-dev libpcap-dev openssl libpq-dev libreadline6-dev libsqlite3-dev libssl-dev locate libsvn1 libtool libxml2 libxml2-dev libxslt-dev wget libyaml-dev ncurses-dev  postgresql-contrib xsel zlib1g zlib1g-dev -y
 
@@ -29,9 +32,12 @@ msfconsole
 
 ```
 
-### Notes
+### Docker manager
+```
+sudo ./dockermg.sh -h
 ```
 
-
+### Notes
+```
 
 ```

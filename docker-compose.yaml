@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-    alpine_gustavo:
-        build:
-            context: .
-            dockerfile: alpine.dockerfile
-        volumes:
-            - ./:/var/www/html
-        ports:
-            - 80:80
-        container_name: alpine_gustavo
-        networks:
-            kali-app-network:
-                ipv4_address: 17.0.0.3
+    # alpine_gustavo:
+    #     build:
+    #         context: .
+    #         dockerfile: alpine.dockerfile
+    #     volumes:
+    #         - ./:/var/www/html
+    #     ports:
+    #         - 80:80
+    #     container_name: alpine_gustavo
+    #     networks:
+    #         kali-app-network:
+    #             ipv4_address: 17.0.0.3
 
     # kali:
     #     build:
@@ -35,8 +35,7 @@ services:
         volumes:
             - ./:/var/www/html
         networks:
-            kali-app-network:
-                ipv4_address: 17.0.0.8
+            - kali-app-network
     
     ubuntu:
         build:
@@ -48,13 +47,8 @@ services:
         volumes:
             - ./:/var/www/html
         networks:
-            kali-app-network:
-                ipv4_address: 17.0.0.9
+            - kali-app-network
 
 networks:
     kali-app-network:
         driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: "17.0.0.0/16"
