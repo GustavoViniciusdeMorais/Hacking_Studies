@@ -2,6 +2,8 @@
 
 Created by: Gustavo Vinicius
 - [Basic Hacking](./BasicHackingSteps.md)
+- [Config DHCP](./dhcp.md)
+
 ### Installs
 ```
 apt update
