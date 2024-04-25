@@ -14,10 +14,14 @@
    ```
    Here's a simple configuration example:
    ```
-   subnet 192.168.1.0 netmask 255.255.255.0 {
-       range 192.168.1.100 192.168.1.200;
-       option routers 192.168.1.1;
-       option domain-name-servers 8.8.8.8, 8.8.4.4;
+   default-lease-time 600;
+   max-lease-time 7200;
+   subnet 10.0.0.0 netmask 255.255.255.0{
+    interface eth0;
+    range 10.0.0.3 10.0.0.250;
+    option broadcast-address 10.0.0.255;
+    option routers 10.0.0.1;
+    option domain-name-servers 10.0.0.2;
    }
    ```
 

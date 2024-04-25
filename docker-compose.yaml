@@ -25,17 +25,17 @@ services:
     #         kali-app-network:
     #             ipv4_address: 17.0.0.8
 
-    arch:
-        build:
-            context: .
-            dockerfile: arch.dockerfile
-        container_name: arch
-        ports:
-            - 81:81
-        volumes:
-            - ./:/var/www/html
-        networks:
-            - kali-app-network
+    # arch:
+    #     build:
+    #         context: .
+    #         dockerfile: arch.dockerfile
+    #     container_name: arch
+    #     ports:
+    #         - 81:81
+    #     volumes:
+    #         - ./:/var/www/html
+    #     networks:
+    #         - kali-app-network
     
     ubuntu:
         build:
@@ -44,11 +44,30 @@ services:
         container_name: ubuntu
         ports:
             - 8800:8880
+            - 67:67
+            - 68:68
         volumes:
             - ./:/var/www/html
+        networks:
+            kali-app-network:
+                ipv4_address: 10.0.0.3
+    
+    parrot:
+        build:
+            context: .
+            dockerfile: parrot.dockerfile
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - 81:81
+        container_name: parrot
         networks:
             - kali-app-network
 
 networks:
     kali-app-network:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: "10.0.0.0/16"
