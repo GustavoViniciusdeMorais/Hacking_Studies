@@ -3,6 +3,7 @@
 Created by: Gustavo Vinicius
 - [Basic Hacking](./BasicHackingSteps.md)
 - [Config DHCP](./dhcp.md)
+- [DNS](./dns.md)
 - [FTP Server](./ftp.md)
 
 ### Installs

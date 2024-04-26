@@ -41,6 +41,13 @@ sudo systemctl restart vsftpd
 
 You can now test the FTP server by connecting to it using an FTP client. You should be able to connect anonymously and upload files.
 
+## Create directory and flag file
+```bash
+cd /srv/ftp/
+mkdir test
+nano test/flag.txt
+```
+
 ## Additional Configuration (Optional)
 
 - **Restrict Anonymous Access**: You may want to restrict anonymous access to certain directories. You can do this by configuring the `chroot_local_user` and `chroot_list_enable` options in the vsftpd configuration file.
