@@ -44,10 +44,13 @@ services:
         container_name: ubuntu
         ports:
             - 8800:8880
-            - 67:67
+            - "67:67/udp"
             - 68:68
+            - 21:21
         volumes:
             - ./:/var/www/html
+        cap_add:
+            - NET_ADMIN
         networks:
             kali-app-network:
                 ipv4_address: 10.0.0.3
@@ -60,6 +63,8 @@ services:
             - ./:/var/www/html
         ports:
             - 81:81
+        cap_add:
+            - NET_ADMIN
         container_name: parrot
         networks:
             - kali-app-network

@@ -28,64 +28,28 @@
 3. **Start DHCP Server:**
    After configuring the DHCP server, start the service:
    ```bash
-   sudo systemctl start isc-dhcp-server
+   rm -rf /var/run/dhcpd.pid
+   service isc-dhcp-server start
    ```
 
-### Docker Compose Configuration for Ubuntu
-
-Create a `docker-compose.yml` file for Ubuntu:
-
-```yaml
-version: '3'
-
-services:
-  ubuntu_dhcp:
-    image: ubuntu
-    container_name: ubuntu_dhcp_server
-    networks:
-      - dhcp_bridge
-
-networks:
-  dhcp_bridge:
-    driver: bridge
+### Get IP from DHCP
+At the other linux machine
+```sh
+nano /etc/network/interfaces
 ```
-
-### Docker Compose Configuration for Arch Linux
-
-Create a `docker-compose.yml` file for Arch Linux:
-
-```yaml
-version: '3'
-
-services:
-  arch_linux_client:
-    image: archlinux
-    container_name: arch_linux_client
-    networks:
-      - dhcp_bridge
-
-networks:
-  dhcp_bridge:
-    external:
-      name: dhcp_bridge
+Config the eth0 to request IPs
 ```
-
-### Running the Docker Containers
-
-1. **Ubuntu DHCP Server:**
-   Run the Ubuntu DHCP server container:
-   ```bash
-   docker-compose -f docker-compose-ubuntu.yml up -d
-   ```
-
-2. **Arch Linux Client:**
-   Run the Arch Linux client container:
-   ```bash
-   docker-compose -f docker-compose-archlinux.yml up -d
-   ```
-
-Now, the Arch Linux client should receive an IP address from the DHCP server running on Ubuntu within the Docker network named `dhcp_bridge`.
-
-### Testing
-
-To verify that the Arch Linux client has received an IP address from the DHCP server, you can check the network settings within the Arch Linux container or try accessing external resources from within the container to confirm connectivity.
+auto eth0
+iface eth0 inet dhcp
+```
+Restart the network service
+```sh
+service networking force-reload
+```
+It's gona print DHCP offer and bound
+```
+DHCPOFFER of 10.0.0.4 from 10.0.0.3
+DHCPREQUEST for 10.0.0.4 on eth0 to 255.255.255.255 port 67
+DHCPACK of 10.0.0.4 from 10.0.0.3
+bound to 10.0.0.4 -- renewal in 270 seconds.
+```
