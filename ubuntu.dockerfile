@@ -8,4 +8,6 @@ FROM gustavovinicius/devsecops:ubuntu_server
 # ADD ./Configurations/dhcpd.conf /etc/dhcp/dhcpd.conf
 # RUN systemctl start isc-dhcp-server
 
+ADD ./nginx/default.conf /etc/nginx/sites-available/default
+
 ENTRYPOINT ["tail", "-f", "/dev/null"]

@@ -39,7 +39,7 @@ then
             docker container stop $(docker container ls -aq) && docker network prune -f
         fi
 
-        if [ -n "$2" ]
+        if [ "$2" = "sh" ] || [ "$2" = "bash" ]
         then
             docker exec -it -u 0 $1 $2
         fi

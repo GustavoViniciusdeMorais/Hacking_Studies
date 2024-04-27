@@ -43,7 +43,7 @@ services:
             dockerfile: ubuntu.dockerfile
         container_name: ubuntu
         ports:
-            - 8800:8880
+            - 8080:80
             - "67:67/udp"
             - 68:68
             - 21:21
