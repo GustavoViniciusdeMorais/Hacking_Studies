@@ -38,63 +38,90 @@ First, compile your C program. Assuming your program is named `cli_listener.c`, 
 
 ```bash
 gcc -o cli_listener cli_listener.c
+chmod +x /etc/init.d/cli_listener
 ```
+Sure, if you want to create a Linux service in Ubuntu without using systemd, you can use traditional SysVinit scripts. Here's how you can do it:
 
-Now, create a systemd service file for your program. Open a text editor and create a file named `cli_listener.service` with the following contents:
+1. **Write Your C Program**: First, write your C program. Let's assume your C program is named `cli_listener.c`.
 
-```
-[Unit]
-Description=CLI Listener Service
-After=network.target
+2. **Compile Your C Program**: Compile your C program into an executable. Assuming your executable is named `cli_listener`, you can compile it using `gcc`:
 
-[Service]
-Type=simple
-ExecStart=/path/to/your/cli_listener
+    ```bash
+    gcc -o cli_listener cli_listener.c
+    ```
 
-[Install]
-WantedBy=multi-user.target
-```
+3. **Create a SysVinit Script**: Now, you'll create a SysVinit script to manage your service. Create a new file named `cli_listener` in the `/etc/init.d/` directory:
 
-Replace `/path/to/your/cli_listener` with the actual path to your compiled C program.
+    ```bash
+    sudo nano /etc/init.d/cli_listener
+    ```
 
-Once you've created the service file, move it to the systemd service directory:
+    Add the following content to the script:
 
-```bash
-sudo mv cli_listener.service /etc/systemd/system/
-```
+    ```bash
+    #!/bin/sh
+    ### BEGIN INIT INFO
+    # Provides:          cli_listener
+    # Required-Start:    $all
+    # Required-Stop:     $all
+    # Default-Start:     2 3 4 5
+    # Default-Stop:      0 1 6
+    # Short-Description: CLI Listener Service
+    ### END INIT INFO
 
-Now, reload systemd to read the new service file:
+    # Change the working directory to where your executable is located
+    cd /var/www/html/Services/cli_listener
 
-```bash
-sudo systemctl daemon-reload
-```
+    case "$1" in
+        start)
+            echo "Starting CLI Listener Service"
+            ./cli_listener &
+            ;;
+        stop)
+            echo "Stopping CLI Listener Service"
+            pkill -f cli_listener
+            ;;
+        restart)
+            echo "Restarting CLI Listener Service"
+            pkill -f cli_listener
+            sleep 1
+            ./cli_listener &
+            ;;
+        *)
+            echo "Usage: $0 {start|stop|restart}"
+            exit 1
+            ;;
+    esac
 
-You can now start your service:
+    exit 0
+    ```
 
-```bash
-sudo systemctl start cli_listener
-```
+    Make sure to replace `/var/www/html/Services/cli_listener` with the actual directory where your compiled executable `cli_listener` is located.
 
-And enable it to start at boot:
+4. **Set Executable Permissions**: Make the script executable:
 
-```bash
-sudo systemctl enable cli_listener
-```
+    ```bash
+    sudo chmod +x /etc/init.d/cli_listener
+    ```
 
-That's it! Your C program should now be running as a systemd service on your Debian system. You can check its status with:
+5. **Register the Service**: Register the service to start automatically at boot:
 
-```bash
-sudo systemctl status cli_listener
-```
+    ```bash
+    sudo update-rc.d cli_listener defaults
+    ```
 
-And stop it with:
+6. **Start the Service**: You can start, stop, and restart the service using the `service` command:
 
-```bash
-sudo systemctl stop cli_listener
-```
+    ```bash
+    sudo service cli_listener start
+    ```
 
-Or disable it from starting at boot with:
+    ```bash
+    sudo service cli_listener stop
+    ```
 
-```bash
-sudo systemctl disable cli_listener
-```
+    ```bash
+    sudo service cli_listener restart
+    ```
+
+That's it! Your C program should now be running as a service in Ubuntu using the SysVinit approach. This method is a bit more manual compared to systemd, but it's still widely used, especially on older systems or in cases where systemd is not available.
