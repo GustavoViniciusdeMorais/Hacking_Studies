@@ -48,6 +48,36 @@ mkdir test
 nano test/flag.txt
 ```
 
+# FTP File Transfer
+
+FTP (File Transfer Protocol) allows you to transfer files between your computer and an FTP server. Here's how to connect and transfer files using basic FTP commands:
+
+## Connecting to the FTP Server
+
+To connect to the FTP server, use the following command in your terminal or command prompt:
+
+```sh
+ftp server_ip_or_domain
+```
+
+## Uploading a File
+
+To upload a file to the FTP server, use the `put` command followed by the path to the file you want to upload. For example:
+
+```sh
+put /path/to/local/file.txt
+```
+
+Wait for the upload to complete.
+
+## Downloading a File
+
+To download a file from the FTP server, use the `get` command followed by the filename. For example:
+
+```sh
+get file.txt
+```
+
 ## Additional Configuration (Optional)
 
 - **Restrict Anonymous Access**: You may want to restrict anonymous access to certain directories. You can do this by configuring the `chroot_local_user` and `chroot_list_enable` options in the vsftpd configuration file.
