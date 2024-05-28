@@ -2,6 +2,10 @@
 
 This guide will walk you through the process of installing and configuring an FTP server on Ubuntu, allowing anonymous connections.
 
+- [Config User](./ftp_user_config.md)
+- [Config Firewall](./firewall_ftp.md)
+- [Exploit](./exploit_ftp.md)
+
 ## Step 1: Install vsftpd
 
 First, update your package index and install the `vsftpd` package:
