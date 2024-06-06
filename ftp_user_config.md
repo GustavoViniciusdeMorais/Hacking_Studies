@@ -78,7 +78,8 @@ ftp>
 Once logged in, you can use FTP commands to navigate and transfer files.
 
 ## Summary
-
+We've created the directory home/gustavo for user gustavo with pass gustavo to access through ftp.<br>
+The configuration was commited to docker gustavovinicius/devsecops:ubuntu_server
 1. Create a new user with `sudo adduser username`.
 2. Configure vsftpd to allow local user logins and restrict them to their home directories.
 3. Set up the user's FTP directory and ensure proper ownership.
