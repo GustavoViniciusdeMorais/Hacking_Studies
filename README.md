@@ -5,6 +5,7 @@ Created by: Gustavo Vinicius
 - [Config DHCP](./dhcp.md)
 - [DNS](./dns.md)
 - [FTP Server](./ftp.md)
+- [SSH](./ssh.md)
 - [Router](./router.md)
 - [Service Example](./service_example.md)
 
