@@ -41,3 +41,12 @@ CREATE TABLE `products` (
 
 -- Insert data into `products`
 INSERT INTO `products` (`id`, `name`, `price`) VALUES (1, 'Coca Cola', 5.5);
+
+SELECT 
+c.email,
+p.name AS product_name,
+o.id AS order_code,
+o.total_price
+FROM customers AS c
+JOIN orders AS o ON c.id = o.customer_id
+JOIN products AS p ON o.product_id = p.id;
