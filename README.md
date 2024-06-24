@@ -1,13 +1,14 @@
 # Hacking Studies
 
 Created by: Gustavo Vinicius
-- [Basic Hacking](./BasicHackingSteps.md)
-- [Config DHCP](./dhcp.md)
-- [DNS](./dns.md)
-- [FTP Server](./ftp.md)
-- [SSH](./ssh.md)
-- [Router](./router.md)
-- [Service Example](./service_example.md)
+- [Basic Hacking](./tutorials/BasicHackingSteps.md)
+- [Config DHCP](./tutorials/dhcp.md)
+- [DNS](./tutorials/dns.md)
+- [FTP Server](./tutorials/ftp.md)
+- [SSH](./tutorials/ssh.md)
+- [Router](./tutorials/router.md)
+- [Service Example](./tutorials/service_example.md)
+- [Mariadb](./tutorials/sql.md)
 
 ### Installs
 ```
