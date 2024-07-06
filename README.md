@@ -1,6 +1,7 @@
 # Hacking Studies
 
 Created by: Gustavo Vinicius
+- [Simple wifi network](./wifiNetwork.md)
 - [Basic Hacking](./tutorials/BasicHackingSteps.md)
 - [Config DHCP](./tutorials/dhcp.md)
 - [DNS](./tutorials/dns.md)
@@ -9,6 +10,7 @@ Created by: Gustavo Vinicius
 - [Router](./tutorials/router.md)
 - [Service Example](./tutorials/service_example.md)
 - [Mariadb](./tutorials/sql.md)
+- [Change NIC](./changeNic.sh)
 
 ### Installs
 ```
