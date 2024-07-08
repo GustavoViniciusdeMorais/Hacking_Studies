@@ -1,7 +1,7 @@
 # Hacking Studies
 
 Created by: Gustavo Vinicius
-- [Simple wifi network](./wifiNetwork.md)
+- [Simple wifi network](./tutorials/wifiNetwork.md)
 - [Basic Hacking](./tutorials/BasicHackingSteps.md)
 - [Config DHCP](./tutorials/dhcp.md)
 - [DNS](./tutorials/dns.md)
@@ -11,6 +11,8 @@ Created by: Gustavo Vinicius
 - [Service Example](./tutorials/service_example.md)
 - [Mariadb](./tutorials/sql.md)
 - [Change NIC](./changeNic.sh)
+- [Tunneling](./tutorials/hacking/tunneling.md)
+- [Monitoring/Protecting](./tutorials/monitoring_protecting.md)
 
 ### Installs
 ```
