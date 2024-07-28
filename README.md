@@ -2,9 +2,20 @@
 
 Created by: Gustavo Vinicius
 
-### Installs
-```
+### Branches
+- parrot-security
+- [virtual-network](https://github.com/GustavoViniciusdeMorais/Hacking_Studies/tree/virtual-network)
+    - This branch is all about configuring network services and exploiting them
 
+### Tutorials
+- [Google Hacking basics](./tutorials/GoogleHacking.md)
+- [Debug C code as assembly](./tutorials/C_AssemblyDebug.md)
+- [Nmap](./tutorials/NMAP.md)
+- [Maltego](./tutorials/Maltego.md)
+- [Shodan](./tutorials/Shodan.md)
+
+### Install Msfconsole
+```
 apt update
 
 apt install nmap -y
@@ -26,12 +37,8 @@ chmod 755 msfinstall
 ./msfinstall
 
 msfconsole 
-
 ```
 
 ### Notes
 ```
-
-
-
 ```
