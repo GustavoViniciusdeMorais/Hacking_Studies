@@ -2,9 +2,9 @@
 
 1. **Router Configuration**:
    - Connect to your Wi-Fi router's web interface (usually accessible via `http://192.168.1.1` or `http://192.168.0.1`).
-   - Login with the admin credentials.
+   - Log in with the admin credentials.
    - Configure the SSID (Wi-Fi network name) and password.
-   - Enable DHCP server on the router to assign IP addresses automatically to connected devices.
+   - Enable the DHCP server on the router to automatically assign IP addresses to connected devices.
 
 ### **Step 2: Configure Debian Machines**
 
@@ -45,10 +45,10 @@
        dns-nameservers 8.8.8.8 8.8.4.4
    ```
 
-4. **Restart Networking**:
-   - Restart the networking service to apply changes.
+4. **Apply Network Configuration Changes**:
+   - Instead of restarting the networking service, bring the network interface down and back up to apply changes.
    ```bash
-   sudo service networking restart
+   sudo ifdown wlan0 && sudo ifup wlan0
    ```
 
 ### **Step 3: Testing the Network**

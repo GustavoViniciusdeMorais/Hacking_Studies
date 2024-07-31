@@ -2,6 +2,8 @@
 
 In this guide, we'll walk through the steps to configure an Ubuntu OS as a network gateway and router.
 
+- [Static Route](./static_routing.md)
+
 ## Step 1: Update and Upgrade
 
 Ensure your Ubuntu system is up to date by running:
