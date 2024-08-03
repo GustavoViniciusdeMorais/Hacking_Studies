@@ -33,7 +33,13 @@
    ```
 
 ### Get IP from DHCP
-At the other linux machine
+
+#### Get DHCP Offer with dhcpd
+```sh
+dhcpcd eth0
+```
+
+#### Altering network config file
 ```sh
 nano /etc/network/interfaces
 ```
@@ -53,3 +59,4 @@ DHCPREQUEST for 10.0.0.4 on eth0 to 255.255.255.255 port 67
 DHCPACK of 10.0.0.4 from 10.0.0.3
 bound to 10.0.0.4 -- renewal in 270 seconds.
 ```
+
