@@ -10,7 +10,7 @@ Created by: Gustavo Vinicius
 - [Router](./tutorials/router.md)
 - [Service Example](./tutorials/service_example.md)
 - [Mariadb](./tutorials/sql.md)
-- [Change NIC](./changeNic.sh)
+- [Change NIC](./tutorials/changeNic.md)
 - [Tunneling](./tutorials/hacking/tunneling.md)
 - [Monitoring/Protecting](./tutorials/monitoring_protecting.md)
 
