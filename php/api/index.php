@@ -13,7 +13,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->get('/api/check', function (Request $request, Response $response, $args) {
+$app->get('/api/check/[{id:\d+}]', function (Request $request, Response $response, $args) {
     $response->getBody()->write(
         json_encode([
             'status' => 'sucess',

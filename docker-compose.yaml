@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 services:
     # alpine_gustavo:
@@ -68,7 +68,8 @@ services:
             - NET_ADMIN
         container_name: parrot
         networks:
-            - kali-app-network
+            kali-app-network:
+                ipv4_address: 10.0.0.4
 
 networks:
     kali-app-network:
