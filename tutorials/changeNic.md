@@ -26,4 +26,4 @@ ifconfig $interface up
 ifconfig $interface
 ```
 
-- [Script example](../changeNic.sh)
+- [Script example](../bash/changeNic.sh)
