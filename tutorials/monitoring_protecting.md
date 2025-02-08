@@ -35,6 +35,13 @@ sudo ufw reload
 
 Replace `[Trusted_IP]` with the IP addresses you want to allow access.
 
+#### Block port
+```sh
+ufw deny 21/tcp
+ufw reload
+ufw status
+```
+
 ### 3. Monitor Connection Attempts
 
 Use `tcpdump` to monitor and capture connection attempts to the FTP and Nginx services.
