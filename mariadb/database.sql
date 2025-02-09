@@ -15,6 +15,17 @@ CREATE TABLE `customers` (
 -- Insert data into `customers`
 INSERT INTO `customers` (`id`, `name`, `email`, `cpf`) VALUES (1, 'gustavo', 'gustavo@email.com', '04777911199');
 
+-- Table structure for table `products`
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `price` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Insert data into `products`
+INSERT INTO `products` (`id`, `name`, `price`) VALUES (1, 'Coca Cola', 5.5);
+
 -- Table structure for table `orders`
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -30,17 +41,6 @@ CREATE TABLE `orders` (
 
 -- Insert data into `orders`
 INSERT INTO `orders` (`id`, `customer_id`, `product_id`, `total_price`) VALUES (1, 1, 1, 5.5);
-
--- Table structure for table `products`
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `price` double DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Insert data into `products`
-INSERT INTO `products` (`id`, `name`, `price`) VALUES (1, 'Coca Cola', 5.5);
 
 SELECT 
 c.email,
