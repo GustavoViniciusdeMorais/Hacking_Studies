@@ -14,6 +14,7 @@ Created by: Gustavo Vinicius
 - [Tunneling](./tutorials/hacking/tunneling.md)
 - [Monitoring/Protecting](./tutorials/monitoring_protecting.md)
 - [Simple Pentest](./tutorials/pentest/simple.md)
+- [Metasploit Course](./)
 
 ### Installs
 ```
