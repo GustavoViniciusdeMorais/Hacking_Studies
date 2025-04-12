@@ -14,6 +14,7 @@ Created by: Gustavo Vinicius
 - [Tunneling](./tutorials/hacking/tunneling.md)
 - [Monitoring/Protecting](./tutorials/monitoring_protecting.md)
 - [Simple Pentest](./tutorials/pentest/simple.md)
+- [SQL Injection](./tutorials/sqlinjection.md)
 - [Metasploit Course](./tutorials/pentest/metasploit.md)
 
 ### Installs
