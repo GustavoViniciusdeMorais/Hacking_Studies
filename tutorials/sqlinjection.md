@@ -72,6 +72,9 @@ metasploitable2:
 docker exec -it -u 0 metasploitable2 sh
 nano /var/www/mutillidae/config.inc
 netstat -tlp | grep mysql
+
+http://localhost:83/mutillidae/index.php?page=user-info.php
+# owasp 10, A1 injection at menu
 ```
 ### Metasploitable2 Create DB
 ```bash
