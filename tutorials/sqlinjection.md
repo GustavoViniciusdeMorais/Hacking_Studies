@@ -75,6 +75,9 @@ netstat -tlp | grep mysql
 ```
 ### Metasploitable2 Create DB
 ```bash
+mysql -u root -p # no pass
+show databases;
+use metasploit;
 source /home/gustavo/users.sql;
 LOAD DATA INFILE '/home/gustavo/users.txt' into table accounts FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 select * from accounts;
