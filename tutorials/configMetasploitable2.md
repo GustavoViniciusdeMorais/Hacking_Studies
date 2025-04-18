@@ -1,8 +1,6 @@
 # Config Metasploitable2
 
 ```yaml
-### Metasploitable2
-```bash
 metasploitable2:
   image: tleemcjr/metasploitable2
   tty: true
