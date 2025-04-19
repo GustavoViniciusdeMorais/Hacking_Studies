@@ -1,10 +1,10 @@
 version: '3.5'
 
 services:
-    metasploitable2:
+    exploit:
         image: tleemcjr/metasploitable2
         tty: true
-        container_name: metasploitable2
+        container_name: exploit
         ports:
             - 83:80
         volumes:

@@ -25,8 +25,8 @@ http://localhost:83/mutillidae/index.php?page=user-info.php
 mysql -u root -p # no pass
 show databases;
 use metasploit;
-source /home/gustavo/users.sql;
-LOAD DATA INFILE '/home/gustavo/users.txt' into table accounts FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+source /home/gustavo/metasploitable/users.sql;
+LOAD DATA INFILE '/home/gustavo/metasploitable/users.txt' into table accounts FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 select * from accounts;
 ```
 ### Metasploitable2 users.txt
