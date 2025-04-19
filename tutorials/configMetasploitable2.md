@@ -1,10 +1,10 @@
 # Config Metasploitable2
 
 ```yaml
-metasploitable2:
+exploit:
   image: tleemcjr/metasploitable2
   tty: true
-  container_name: metasploitable2
+  container_name: exploit
   ports:
       - 83:80
   volumes:
@@ -13,7 +13,7 @@ metasploitable2:
       kali-app-network:
           ipv4_address: 10.0.0.6
 
-docker exec -it -u 0 metasploitable2 sh
+docker exec -it -u 0 exploit sh
 nano /var/www/mutillidae/config.inc
 netstat -tlp | grep mysql
 
