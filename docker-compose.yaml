@@ -6,12 +6,21 @@ services:
         tty: true
         container_name: exploit
         ports:
-            - 83:80
+            - "30445:445"       # SMB
+            - "3021:21"         # FTP
+            - "3022:22"         # SSH
+            - "3023:23"         # Telnet
+            - "3080:80"         # HTTP
+            - "3443:443"       # HTTPS
+            - "35432:5432"     # PostgreSQL
+            - "35900:5900"     # VNC
+            - "36667:6667"     # IRC
+            - "33306:3306"     # mariadb
         volumes:
             - ./:/home/gustavo
         networks:
             kali-app-network:
-                ipv4_address: 10.0.0.6
+                ipv4_address: 172.20.0.6
     
     ubuntu:
         build:
@@ -30,7 +39,7 @@ services:
             - NET_ADMIN
         networks:
             kali-app-network:
-                ipv4_address: 10.0.0.3
+                ipv4_address: 172.20.0.3
     
     parrot:
         build:
@@ -45,12 +54,12 @@ services:
         container_name: parrot
         networks:
             kali-app-network:
-                ipv4_address: 10.0.0.4
+                ipv4_address: 172.20.0.4
 
 networks:
-    kali-app-network:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: "10.0.0.0/16"
+  kali-app-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.0.0/16"  # Changed to a more standard Docker subnet
