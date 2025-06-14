@@ -68,8 +68,8 @@ services:
         volumes:
             - ./:/var/www/html
         networks:
-            sql-app-network:
-                ipv4_address: 10.0.0.8
+            kali-app-network:
+                ipv4_address: 172.20.0.13
 
 networks:
   kali-app-network:
