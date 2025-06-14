@@ -55,6 +55,21 @@ services:
         networks:
             kali-app-network:
                 ipv4_address: 172.20.0.4
+    
+    mongo:
+        image: mongo:latest
+        restart: always
+        container_name: mongo
+        ports:
+            - 27031:27017
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        volumes:
+            - ./:/var/www/html
+        networks:
+            sql-app-network:
+                ipv4_address: 10.0.0.8
 
 networks:
   kali-app-network:
