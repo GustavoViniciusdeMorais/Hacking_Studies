@@ -15,7 +15,7 @@ services:
             - "35432:5432"     # PostgreSQL
             - "35900:5900"     # VNC
             - "36667:6667"     # IRC
-            - "33306:3306"     # mariadb
+            - "3308:3306"     # mariadb
         volumes:
             - ./:/home/gustavo
         networks:
