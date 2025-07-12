@@ -16,6 +16,7 @@ Created by: Gustavo Vinicius
 - [Simple Pentest](./tutorials/pentest/simple.md)
 - [SQL Injection](./tutorials/sqlinjection.md)
 - [Metasploit Course](./tutorials/pentest/metasploit.md)
+- [HoneyPot](./tutorials/hacking/honeypot.md)
 - [Ruby](./ruby/ruby.md)
 
 ### Installs
