@@ -1,6 +1,9 @@
 # Hacking Studies
 
+<img src="./imgs/hacking-steps.jpg" width="600" height="400" /><br/>
+
 Created by: Gustavo Vinicius
+- [Hacking Steps](./tutorials/hacking/steps.md)
 - [Simple wifi network](./tutorials/wifiNetwork.md)
 - [Basic Hacking](./tutorials/BasicHackingSteps.md)
 - [Config DHCP](./tutorials/dhcp.md)
