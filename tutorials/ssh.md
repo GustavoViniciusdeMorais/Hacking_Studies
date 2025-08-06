@@ -7,6 +7,8 @@ This tutorial will guide you through the installation and basic configuration of
 - A system running Debian or a Debian-based distribution
 - Administrative (root) access to the system
 
+- [add key](./ssh_add_key.md)
+
 ## Step 1: Update Your System
 
 Before installing any new packages, it’s good practice to update your system’s package list. Open a terminal and run:
