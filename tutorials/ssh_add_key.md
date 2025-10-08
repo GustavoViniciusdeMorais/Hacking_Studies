@@ -6,6 +6,7 @@ rlogin -l msfadmin 10.0.0.6
 echo "ssh key" >> /root/.ssh/authorized_keys
 ```
 # With server control
+The server owner has to create the user account and give it bash access.
 #### At server:
 ```bash
 useradd -g root -s /bin/bash gustavo
