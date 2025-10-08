@@ -18,7 +18,7 @@ netstat -ntlp
 ```bash
 ssh-keygen -t ed25519
 # creates at the /root/.ssh/, could be every name or path
-# send key
+# send key, use the previous created user of name gustavo
 ssh-copy-id -i /root/.ssh/id_ed25519.pub -p 2222 user@[hostname or ip]
 # runs command in remote
 ssh -p 2222 gustavo@10.0.0.3 'netstat -ntlp'
