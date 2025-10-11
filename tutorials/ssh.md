@@ -121,7 +121,7 @@ ssh username@hostname_or_ip_address -p 2222
 - **Copying SSH Keys**: For passwordless login, you can copy your SSH key to the remote server using:
 
   ```sh
-  ssh-copy-id username@hostname_or_ip_address
+  ssh-copy-id -i /path/to/id_ssh.pub username@hostname_or_ip_address
   ```
 
 - **Testing Configuration**: You can test your SSH configuration for syntax errors with:
