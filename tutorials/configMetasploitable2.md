@@ -13,7 +13,7 @@ exploit:
       kali-app-network:
           ipv4_address: 10.0.0.6
 
-docker exec -it -u 0 exploit sh
+docker exec -it -u 0 exploit bash
 nano /var/www/mutillidae/config.inc
 netstat -tlp | grep mysql
 
