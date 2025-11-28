@@ -13,3 +13,13 @@ fi
 nmap -v -sV -T5 -p $gusports $gusip
 tree .
 echo -e "\e[0m" # reset
+
+#host="localhost";
+#ports="22,21,80";
+#if [ -n "$1" ];then
+#    host=$1;
+#fi
+#if [ -n "$2" ];then
+#    ports=$2;
+#fi
+#nmap -v -sV -T5 -p $ports $host
