@@ -11,6 +11,8 @@ ssh-keygen -t ed25519 -C "gustavo@email.com"
 eval "$(ssh-agent -s)"
 ssh-add /root/.ssh/id_hack
 ssh-add -l # list the loaded key by the agent
+# to remove all identities
+ssh-add -D
 
 cat /root/.ssh/id_hack.pub
 
