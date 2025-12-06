@@ -10,6 +10,7 @@ echo "ssh key" >> /root/.ssh/authorized_keys
 ssh-keygen -t ed25519 -C "gustavo@email.com"
 eval "$(ssh-agent -s)"
 ssh-add /root/.ssh/id_hack
+ssh-add -l # list the loaded key by the agent
 
 cat /root/.ssh/id_hack.pub
 
