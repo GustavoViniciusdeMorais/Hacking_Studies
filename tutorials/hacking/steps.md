@@ -2,7 +2,7 @@
 ### Reconnaissance
 ```
 Identifying the Target, finding out the target's IP Address Range, Network, DNS records.
-nmap -sn 
+nmap -sn 192.168.0.1-100 # sn is ping scan
 ```
 ### Scanning
 ```
