@@ -13,10 +13,24 @@ sudo ifconfig wlp3s0 up
 
 * [**Aircrack-ng**](https://www.aircrack-ng.org/doku.php?id=cracking_wpa)
 
-## Connect to a VPN
+## Openvpn connect
+```bash
+apt install openvpn -y
+nano gustavocop14dos-regular.ovpn
+nano auth.txt
+openvpn --config gustavocop14dos-regular.ovpn --auth-user-pass auth.txt &
 
+nmap -v -sV -T5 [ip] -p 60000-65535
 ```
-sudo openvpn connectionFile.ovpn
+### Update the vpn connection file
+- Remove the lines and leave just auth-user-pass
+- Create the auth.txt and save the two lines with the hashes
+```xml
+auth-user-pass
+<auth-user-pass>
+6a13***78d97#######
+457e7########3dcefbd2########
+</auth-user-pass>
 ```
 
 ## Proxychain
