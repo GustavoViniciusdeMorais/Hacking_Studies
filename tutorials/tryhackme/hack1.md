@@ -1,0 +1,27 @@
+# Challenge Easy Peasy
+- [openvpn instructions](../BasicHackingSteps.md)
+- [kali dirb for common lists](https://www.kali.org/tools/dirb/)
+### Use kali docker
+```bash
+docker run -it -d --name kali kalilinux/kali-rolling
+docker exec -it -u 0 kali bash
+
+apt install john -y
+john --list=formats | grep -i 'md5'
+
+```
+```bash
+nmap -v -sC -sV -T5 [ip] -p- # or port range 60000-65535
+# nmap -v -sC -sV -T5 -p 80,6498,65524 10.67.173.154
+
+# apt install gobuster -y
+gobuster dir -u http://10.67.173.154:65524 -w openvpn/common.txt
+
+# decode text base64
+# apt install base64 -y
+echo "ZmxhZ3tmMXJzN19mbDRnfQ==" | base64 -d && echo ""
+
+john passwords.txt --format=raw-MD5
+john passwords.txt --show --format=raw-MD5
+```
+n0th1ng3ls3m4tt3r

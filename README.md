@@ -8,6 +8,7 @@ Created by: Gustavo Vinicius
 - [Hacking Steps](./tutorials/hacking/steps.md)
 - [Simple wifi network](./tutorials/wifiNetwork.md)
 - [Basic Hacking](./tutorials/BasicHackingSteps.md)
+    - [try hack me](./tutorials/tryhackme/)
 - [Config DHCP](./tutorials/dhcp.md)
 - [DNS](./tutorials/dns.md)
 - [FTP Server](./tutorials/ftp.md)

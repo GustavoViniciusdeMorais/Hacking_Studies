@@ -20,7 +20,7 @@ nano gustavocop14dos-regular.ovpn
 nano auth.txt
 openvpn --config gustavocop14dos-regular.ovpn --auth-user-pass auth.txt &
 
-nmap -v -sV -T5 [ip] -p 60000-65535
+nmap -v -sC -sV -T5 [ip] -p 60000-65535
 ```
 ### Update the vpn connection file
 - Remove the lines and leave just auth-user-pass
