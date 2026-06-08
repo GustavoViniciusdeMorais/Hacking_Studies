@@ -25,3 +25,11 @@ john passwords.txt --format=raw-MD5
 john passwords.txt --show --format=raw-MD5
 ```
 n0th1ng3ls3m4tt3r
+### Working hashes
+- There is a difference between the hash and base encoded
+- If it does not figure with baseN, try to find hash mode with hashid
+```bash
+echo "ZmxhZ3tmMXJzN19mbDRnfQ==" | base64 -d
+apt install hashid -y
+hashid -m -e 5d41402abc4b2a76b9719d911017c592 -o hashtypes.txt
+```
