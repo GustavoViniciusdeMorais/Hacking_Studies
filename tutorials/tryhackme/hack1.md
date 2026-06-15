@@ -5,7 +5,7 @@
 ```bash
 docker run -it -d --name kali --network=host kali:local # after commit kalilinux/kali-rolling
 docker exec -it -u 0 kali bash
-# no inside kali docker can listen to connections in vpn
+# now inside kali docker can listen to connections in vpn
 # example: ping -c 3 10.190.111.11; responder -I tun0 # responder in interface tun0
 
 apt install john -y
