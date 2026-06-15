@@ -54,13 +54,16 @@ chmod 755 msfinstall
 msfconsole 
 
 ```
-
 ### Docker manager
 ```
 sudo ./dockermg.sh -h
 ```
-
-### Notes
-```
-
+### Links Utils
+```md
+## Platforms
+- [Shodan](shodan.io)
+- [VirusTotal](https://www.virustotal.com/gui/home/upload)
+- [ExploitDB](https://www.exploit-db.com/)
+- [Linux man cli](https://man7.org/index.html)
+- [git hub cve-yyyy search](https://github.com/search?q=cve-2025&type=repositories)
 ```
