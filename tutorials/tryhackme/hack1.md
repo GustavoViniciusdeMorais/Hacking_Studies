@@ -12,6 +12,8 @@ docker exec -it -u 0 kali bash
 # now inside kali docker can listen to connections in vpn
 # example: ping -c 3 10.190.111.11; responder -I tun0 # responder in interface tun0
 
+apt install metasploit-framework -y
+
 apt install john -y
 john --list=formats | grep -i 'md5'
 
