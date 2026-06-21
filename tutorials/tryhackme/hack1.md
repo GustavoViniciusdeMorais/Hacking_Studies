@@ -1,6 +1,7 @@
 # Challenge Easy Peasy
 - [openvpn instructions](../BasicHackingSteps.md)
 - [kali dirb for common lists](https://www.kali.org/tools/dirb/)
+- [msfconsole](./msfconsole.md)
 ### Connect VPN before anything
 ```bash
 openvpn --config gustavocop14dos-regular.ovpn --auth-user-pass auth.txt &

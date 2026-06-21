@@ -1,4 +1,5 @@
 # Msfconsole
+- [Concepts](../pentest/msfconsole_concepts.md)
 ```bash
 service postgresql start
 
