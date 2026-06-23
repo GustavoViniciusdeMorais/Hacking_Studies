@@ -8,4 +8,9 @@ ip -c a
 add-apt-repository []
 # add gpg key
 wget -qO - url/pug.gpg | sudo apt-key add -
+# add source list
+cd /etc/apt/sources.list.d && touch new.list && nano new.list
+# deb http://url apt/stable/
+apt update
+apt install new
 ```
