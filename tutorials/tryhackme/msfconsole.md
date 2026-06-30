@@ -3,6 +3,7 @@
 ```bash
 service postgresql start
 
+# might need (sudo -u postgres msfdb init)
 msfdb init
 
 msfconsole>
