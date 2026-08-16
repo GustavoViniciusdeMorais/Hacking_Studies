@@ -1,5 +1,9 @@
 # TCP IP
 
+### Scripts
+- [client.py](./tcp_client.py)
+- [server.py](./tcp_server.py)
+
 ### Install Python
 ```
 pacman -Sy python-pip --noconfirm
