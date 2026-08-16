@@ -8,6 +8,11 @@ Network foundations:
 # -n: Never do DNS resolution
 nmap -v -sn -n 192.168.0.31-40
 
+# -v verbose
+# -sV port service version info
+# -p ports
+nmap -v -sV -p 80,21,22 192.168.0.40
+
 # check if ports are opened
 nmap -sS -O -p80,8080 10.0.0.3
 
@@ -31,9 +36,6 @@ nmap -sA 10.0.0.0/16
 
 # atack using a zombi host
 nmap -pn -sI 10.0.0.1:455 10.0.0.3
-
-# show services running at host
-nmap -sV 10.0.0.3
 
 # show host OS
 nmap -O 10.0.0.3
