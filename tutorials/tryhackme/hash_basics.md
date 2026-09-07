@@ -1,4 +1,5 @@
 # Hash Basics
+- [crackstation online tool](https://crackstation.net/)
 ```bash
 # get the sha256 hash for a file
 sha256sum file.txt
@@ -21,8 +22,14 @@ apt install hashcat -y
 hashcat --identify b6b0d451bbf6fed658659a9e7e5598fe
 
 # m is mode, a is atack mode 0 for wordlist, -O lower salt
+# kali wordlist path is /usr/share/wordlists/rockyou.txt
 hashcat -m 1400 -a 0 -O hashs.txt wordlist.txt
 
 # to see the result
 hashcat -m 1400 --show hashs.txt
+```
+### Example
+```bash
+hashcat -m 1400 Hashing-Basics/Task-6/hash2.txt /usr/share/wordlists/rockyou.txt
+hashcat -m 1400 --show Hashing-Basics/Task-6/hash2.txt
 ```
