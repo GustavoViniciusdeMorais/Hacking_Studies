@@ -1,4 +1,4 @@
-# Hacking Studies
+****# Hacking Studies
 
 <img src="./imgs/hacking-steps.jpg" width="600" height="400" /><br/>
 [Image from site geeks for geeks https://www.geeksforgeeks.org/ethical-hacking/5-phases-hacking/]
@@ -33,7 +33,7 @@ apt update
 
 apt install nmap -y
 
-apt apt install iputils-ping -y
+apt install iputils-ping && iproute2 -y
 
 apt install wget -y
 
