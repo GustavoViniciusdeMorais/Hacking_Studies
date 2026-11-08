@@ -6,7 +6,8 @@ Network foundations:
 ```bash
 # -sn: Ping Scan - disable port scan
 # -n: Never do DNS resolution
-nmap -v -sn -n 192.168.0.31-40
+# nmap -v -sn -n 192.168.0.31-40
+nmap -sn -T4 -n 192.168.0.0/24
 
 # -v verbose
 # -sV port service version info
