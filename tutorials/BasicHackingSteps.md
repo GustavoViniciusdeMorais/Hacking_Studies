@@ -70,6 +70,8 @@ tcpdump -i any -n host scanme.nmap.org
 ```bash
 # nmap scanme.nmap.org
 # nmap -sV -p 21,22,80 -T4 scanme.nmap.org
+# operating system and default scripts -O -sC
+# nmap -Pn -sV -p 80,22 -T4 --script=http-waf-detect scanme.nmap.org
 nmap -v -Pn [IP]
 
 nmap -v -sV -p [port number] {IP}
