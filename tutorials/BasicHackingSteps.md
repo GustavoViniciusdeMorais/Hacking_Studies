@@ -2,6 +2,7 @@
 
 ### Change MAC Address
 - [nmcli spoof](./nmcli.md)
+- [All Scans](./pentest/all_scans.md)
 ```bash
 # New version
 NIC="eth0"
