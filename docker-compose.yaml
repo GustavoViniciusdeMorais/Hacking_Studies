@@ -19,7 +19,27 @@ services:
         networks:
             kali-app-network:
                 ipv4_address: 172.20.0.6
-    
+    bwapp:
+        image: hackersploit/bwapp-docker
+        tty: true
+        container_name: bwapp
+        ports:
+            - "40445:445"       # SMB
+            - "4021:21"         # FTP
+            - "4022:22"         # SSH
+            - "4023:23"         # Telnet
+            - "4080:80"         # HTTP
+            - "4443:443"       # HTTPS
+            # - "35432:5432"     # PostgreSQL
+            # - "35900:5900"     # VNC
+            # - "36667:6667"     # IRC
+            # - "3308:3306"     # mariadb
+        volumes:
+            - ./:/home/gustavo
+        networks:
+            kali-app-network:
+                ipv4_address: 172.20.0.7
+
     ubuntu:
         build:
             context: .
