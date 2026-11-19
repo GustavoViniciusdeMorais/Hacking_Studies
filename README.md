@@ -1,4 +1,4 @@
-****# Hacking Studies
+## Hacking Studies
 
 <img src="./imgs/hacking-steps.jpg" width="600" height="400" /><br/>
 [Image from site geeks for geeks https://www.geeksforgeeks.org/ethical-hacking/5-phases-hacking/]
@@ -61,11 +61,10 @@ msfconsole
 sudo ./dockermg.sh -h
 ```
 ### Links Utils
-```md
-## Platforms
 - [Shodan](shodan.io)
 - [VirusTotal](https://www.virustotal.com/gui/home/upload)
 - [ExploitDB](https://www.exploit-db.com/)
+- [Kali docker image](https://www.kali.org/docs/containers/using-kali-docker-images)
 - [Linux man cli](https://man7.org/index.html)
 - [git hub cve-yyyy search](https://github.com/search?q=cve-2025&type=repositories)
-```
+
